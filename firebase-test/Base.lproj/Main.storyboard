@@ -15,8 +15,39 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vo9-RI-ArP">
+                                <rect key="frame" x="40" y="620" width="334" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oD3-qh-sy3">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="90"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="krj-d3-Ylo"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign Up"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3Z-sf-DrH">
+                                        <rect key="frame" x="0.0" y="110" width="334" height="90"/>
+                                        <state key="normal" title="Login"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="v3Z-sf-DrH" firstAttribute="height" secondItem="oD3-qh-sy3" secondAttribute="height" id="1Ck-3g-SGp"/>
+                                    <constraint firstAttribute="height" constant="200" id="m2O-Sj-tJJ"/>
+                                    <constraint firstAttribute="width" constant="110" id="yxk-Et-sRM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vo9-RI-ArP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="53Y-wQ-NF7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vo9-RI-ArP" secondAttribute="trailing" constant="40" id="9vG-JS-eUi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vo9-RI-ArP" secondAttribute="trailing" constant="40" id="O4l-vH-zRh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vo9-RI-ArP" secondAttribute="bottom" constant="40" id="RUL-pe-Uwm"/>
+                            <constraint firstItem="Vo9-RI-ArP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ZJj-gK-giq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vo9-RI-ArP" secondAttribute="bottom" constant="40" id="sJe-Wi-rg8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LVS-Oa-Hiq"/>
                 </viewController>
@@ -40,6 +71,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89H-wa-Hl4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="13.043478260869566" y="102.45535714285714"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="1Wl-4l-rLu">
+            <objects>
+                <viewController id="9Bq-2J-qTP" customClass="SignUpViewController" customModule="firebase_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="V7T-Em-5be">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="c3j-2G-eHv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hed-Cn-MAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1791" y="-293"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="Qc5-t6-qF4">
+            <objects>
+                <viewController id="M9A-l3-2iy" customClass="LoginViewController" customModule="firebase_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c3n-mC-KXC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZOc-qs-gU4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QUI-2c-z59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="380"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="6vl-Fc-oOb">
+            <objects>
+                <viewController id="OFQ-Ws-E85" customClass="HomeViewController" customModule="firebase_test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AE3-XD-GYr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wM5-hm-kuf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hig-Gw-YmX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2875" y="102"/>
         </scene>
     </scenes>
     <resources>
