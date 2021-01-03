@@ -25,10 +25,16 @@
                                             <constraint firstAttribute="height" constant="50" id="krj-d3-Ylo"/>
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <segue destination="9Bq-2J-qTP" kind="show" id="C5z-f8-Ws3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3Z-sf-DrH">
                                         <rect key="frame" x="0.0" y="110" width="334" height="90"/>
                                         <state key="normal" title="Login"/>
+                                        <connections>
+                                            <segue destination="M9A-l3-2iy" kind="show" id="vX7-nU-8WL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -133,6 +139,7 @@
                             <constraint firstItem="OU0-c2-xFJ" firstAttribute="top" secondItem="c3j-2G-eHv" secondAttribute="top" constant="40" id="YrG-cW-lqU"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JU9-Vc-uKN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hed-Cn-MAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,6 +194,7 @@
                             <constraint firstItem="As4-yg-lrQ" firstAttribute="leading" secondItem="ZOc-qs-gU4" secondAttribute="leading" constant="40" id="lVY-fg-Dfd"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wwx-gb-7LK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUI-2c-z59" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
