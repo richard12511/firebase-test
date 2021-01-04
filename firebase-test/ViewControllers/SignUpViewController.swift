@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -40,7 +42,47 @@ class SignUpViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func validateForm() -> String? {
+        if (firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
+            return "Please enter a first name"
+        }
+        if (lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
+            return "Please enter a last name"
+        }
+        if (emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
+            return "Please enter an email"
+        }
+        if (passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
+            return "Please enter a password"
+        }
+        
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Validator.isPasswordValid(cleanedPassword) == false {
+            return "Password must be at least 8 characters, contain one alphabetic character, and contain 1 speacial character."
+        }
+        return nil
+    }
+    
     @IBAction func signUpTapped(_ sender: Any) {
+        let error = validateForm()
+        if(error != nil) {
+            showError(error!)
+        }
+        else {
+            Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>) { (res, err) in
+                if err != nil {
+                    self.showError("Error creating user in database")
+                }
+                else {
+                    
+                }
+            }
+        }
+    }
+    
+    func showError(_ message:String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1 //Make it visible
     }
     
 }
