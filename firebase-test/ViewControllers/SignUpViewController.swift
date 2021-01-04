@@ -69,12 +69,12 @@ class SignUpViewController: UIViewController {
             showError(error!)
         }
         else {
-            Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>) { (res, err) in
+            Auth.auth().createUser(withEmail: "", password: "") { (res, err) in
                 if err != nil {
                     self.showError("Error creating user in database")
                 }
                 else {
-                    
+                    let db = Firestore.firestore()
                 }
             }
         }
