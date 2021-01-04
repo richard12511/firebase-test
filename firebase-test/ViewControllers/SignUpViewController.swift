@@ -18,13 +18,19 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setUpElements()
         // Do any additional setup after loading the view.
     }
     
     
-    
-
+    func setUpElements(){
+        errorLabel.alpha = 0;
+        Styler.styleTextField(firstNameTextField)
+        Styler.styleTextField(lastNameTextField)
+        Styler.styleTextField(emailTextField)
+        Styler.styleTextField(passwordTextField)
+        Styler.styleFilledButton(signUpButton)
+    }
     /*
     // MARK: - Navigation
 
