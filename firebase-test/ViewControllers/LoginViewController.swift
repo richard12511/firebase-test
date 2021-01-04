@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -38,7 +39,54 @@ class LoginViewController: UIViewController {
     }
     */
     
+    func validateForm() -> String? {
+        if (emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
+            return "Please enter an email"
+        }
+        if (passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""){
+            return "Please enter a password"
+        }
+        
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Validator.isPasswordValid(cleanedPassword) == false {
+            return "Password must be at least 8 characters, contain one alphabetic character, and contain 1 speacial character."
+        }
+        return nil
+    }
+    
     @IBAction func loginTapped(_ sender: Any) {
+        
+        let error = validateForm()
+        if(error != nil) {
+            showError(error!)
+        }
+        else {
+            let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().signIn(withEmail: cleanedEmail, password: cleanedPassword) { (res, err) in
+                if err != nil {
+                    self.errorLabel.text = err!.localizedDescription
+                    self.errorLabel.alpha = 1
+                }
+                else{
+                    self.redirectToHome()
+                }
+            }
+        }
+    }
+    
+    func redirectToHome(){
+        let homeViewController =
+            storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+    }
+    
+    func showError(_ message:String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1 //Make it visible
     }
     
 }
