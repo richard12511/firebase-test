@@ -69,15 +69,40 @@ class SignUpViewController: UIViewController {
             showError(error!)
         }
         else {
-            Auth.auth().createUser(withEmail: "", password: "") { (res, err) in
+            let cleanedFirstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cleanedLastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            Auth.auth().createUser(withEmail: cleanedEmail, password: cleanedPassword) { (res, err) in
                 if err != nil {
                     self.showError("Error creating user in database")
                 }
                 else {
                     let db = Firestore.firestore()
+                    db.collection("users")
+                        .addDocument(
+                            data:["first_name": cleanedFirstName,
+                                  "last_name": cleanedLastName,
+                                  "uid": res!.user.uid]
+                        ) { (dbError) in
+                            if dbError != nil {
+                                self.showError("Failed to store data in firestore db")
+                            }
+                        }
+                    
+                    self.redirectToHome()
                 }
             }
         }
+    }
+    
+    func redirectToHome(){
+        let homeViewController =
+            storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
     }
     
     func showError(_ message:String) {

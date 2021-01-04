@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292ACADC25A2D24600ABBFC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292ACADB25A2D24600ABBFC1 /* Constants.swift */; };
 		293B05BE25A24EBC00386F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B05BD25A24EBC00386F13 /* AppDelegate.swift */; };
 		293B05C025A24EBC00386F13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B05BF25A24EBC00386F13 /* SceneDelegate.swift */; };
 		293B05C225A24EBC00386F13 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293B05C125A24EBC00386F13 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		292ACADB25A2D24600ABBFC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		293B05BA25A24EBC00386F13 /* firebase-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		293B05BD25A24EBC00386F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		293B05BF25A24EBC00386F13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				29534FD325A28907002A74F4 /* Styler.swift */,
 				29534FD725A28B6C002A74F4 /* Validator.swift */,
+				292ACADB25A2D24600ABBFC1 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -114,7 +117,6 @@
 				A2F0986C4B34D7F1173F6A45 /* Pods-firebase-test.debug.xcconfig */,
 				7CB0D8B97414530DC2851B89 /* Pods-firebase-test.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -249,6 +251,7 @@
 				293B05D625A2504B00386F13 /* LoginViewController.swift in Sources */,
 				293B05C025A24EBC00386F13 /* SceneDelegate.swift in Sources */,
 				293B05D925A2505900386F13 /* HomeViewController.swift in Sources */,
+				292ACADC25A2D24600ABBFC1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
